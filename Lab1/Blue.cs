@@ -1,4 +1,7 @@
-﻿namespace Lab1
+using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography;
+
+namespace Lab1
 {
     public class Blue
     {
@@ -7,18 +10,19 @@
             bool answer = false;
 
             // code here
-
-            // end
+            if (a > 0 && b > 0) answer = true;
+            else if (a < 0 && b < 0) answer = true;
+            else if (a == 0  && b == 0) answer = true;
+                // end
 
             return answer;
         }
         public bool Task2(double d)
         {
             bool answer = false;
-
+            double a = Math.Ceiling(d);
             // code here
-
-            // end
+            if (Math.Pow(a,2) != Math.Pow(d,2)) answer = true;
 
             return answer;
         }
@@ -27,7 +31,11 @@
             bool answer = false;
 
             // code here
-
+            if (b != 0)
+            {
+                if (a % b == 0) answer = true;
+            }
+            
             // end
 
             return answer;
@@ -37,7 +45,9 @@
             double answer = 0;
 
             // code here
-
+            if (Math.Abs(d) > Math.Abs(f) && Math.Abs(d) > Math.Abs(g)) answer = d;
+            if (Math.Abs(f) > Math.Abs(d) && Math.Abs(f) > Math.Abs(g)) answer = f;
+            if (Math.Abs(g) > Math.Abs(f) && Math.Abs(g) > Math.Abs(d)) answer = g;
             // end
 
             return answer;
@@ -47,7 +57,9 @@
             double answer = 0;
 
             // code here
-
+            if (x <= -1) answer = 0;
+            if (x <= 0 && x > -1) answer = x + 1;
+            if (x > 0) answer = 1;
             // end
 
             return answer;
@@ -57,7 +69,10 @@
             bool answer = false;
 
             // code here
-
+            double r, a;
+            r = Math.Sqrt (circleS / Math.PI);
+            a = Math.Sqrt(squareS);
+            if (2 * r <= a) answer = true;
             // end
 
             return answer;
@@ -68,17 +83,41 @@
             int answer = 0;
 
             // code here
+            if (Math.Abs(d) < Math.Abs(f))
+            {
+                if (d > 0)
+                {
+                    answer = -1;
+                }
+                else return answer;
+            }
+            else
+            {
+                if (f > 0) answer = 1;
+                else return answer;
+            }
+                // end
 
-            // end
-
-            return answer;
+                return answer;
         }
         public bool Task8(int a, int b, int c)
         {
             bool answer = false;
 
             // code here
+            a = a / 2;
+            b = b / 2;
+            c = c / 2;
+
+
             
+            if (a + b + c > 0)
+            {
+                if (((a + b + c) % 3 == 0) || ((a + b + c + 1) % 3 == 0)) answer = true;
+            }
+
+
+
             // end
 
             return answer;
